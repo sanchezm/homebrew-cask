@@ -8,11 +8,11 @@ cask :v1 => 'sencha' do
   license :freemium
 
   installer :script => "SenchaCmd-#{version}-osx.app/Contents/MacOS/installbuilder.sh",
-            :args   => ['--mode', 'unattended', '--prefix' , '/opt']
+            :args   => ['--mode', 'unattended', '--prefix', '/opt']
 
   uninstall :script => {
                          :executable => "/opt/Sencha/Cmd/#{version}/uninstall.app/Contents/MacOS/installbuilder.sh",
-                         :args => ["--mode", "unattended"]
+                         :args => ['--mode', 'unattended']
                        }
 
   caveats do
@@ -29,5 +29,4 @@ cask :v1 => 'sencha' do
       If you are a zshell user, copy at the end of your .zshrc file both lines.
     EOS
   end
-
 end

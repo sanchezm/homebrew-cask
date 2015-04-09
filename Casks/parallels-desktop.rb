@@ -1,6 +1,6 @@
 cask :v1 => 'parallels-desktop' do
-  version '10.1.3-28868'
-  sha256 '138e6b501ba54641fbe7e4314c96f05af5c59ddb7212582a30cf07d24bd02c63'
+  version '10.2.0-28956'
+  sha256 'cedb9d0c3a6ea02e9293422ac55e536017ee70891f6ff6a84b85589d8d3cfd51'
 
   url "http://download.parallels.com/desktop/v#{version[/^\w+/]}/#{version.sub(/-.*$/, '')}/ParallelsDesktop-#{version}.dmg"
   homepage 'http://www.parallels.com/products/desktop/'
@@ -10,7 +10,7 @@ cask :v1 => 'parallels-desktop' do
 
   postflight do
     # Set the file to visible, since it was hidden in the dmg
-    system '/usr/bin/SetFile', '-a', 'v', staged_path.join("Parallels Desktop.app")
+    system '/usr/bin/SetFile', '-a', 'v', staged_path.join('Parallels Desktop.app')
   end
 
   uninstall :delete => [

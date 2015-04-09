@@ -3,8 +3,9 @@ cask :v1 => 'flow' do
   sha256 :no_check
 
   url 'http://www.getflow.com/mac/download'
+  name 'Flow'
   homepage 'http://www.getflow.com/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Flow.app'
 end

@@ -4,10 +4,13 @@ cask :v1 => 'inkscape' do
 
   # fastly.net is the official download host per the vendor homepage
   url "https://inkscape.global.ssl.fastly.net/media/resources/file/Inkscape-#{version}-x11-10.7-x86_64.dmg"
+  name 'Inkscape'
   homepage 'http://inkscape.org'
   license :gpl
 
   app 'Inkscape.app'
+  # NOTE: running inkscape on the command line requires absolute paths to files
+  binary 'Inkscape.app/Contents/Resources/bin/inkscape'
 
   zap :delete => '~/.inkscape-etc'
 

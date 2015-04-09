@@ -10,6 +10,7 @@ cask :v1 => 'yasu' do
     url "http://yasuapp.net/files/yasu_#{version}.zip"
   end
 
+  name 'Yasu'
   homepage 'http://yasuapp.net'
   license :gratis
 
@@ -29,5 +30,4 @@ cask :v1 => 'yasu' do
 
     Official announcement can be found on the Yasu homepage.
   EOS
-
 end

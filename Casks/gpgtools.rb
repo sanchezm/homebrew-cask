@@ -1,12 +1,13 @@
 cask :v1 => 'gpgtools' do
-  version '2015.02-b5-1161'
-  sha256 '06fb88a45e8c35c3bb4ce638d45c3bc42d1b8cb84c865106a0eb918fa3fd71f4'
+  version '2015.03-b6'
+  sha256 '1fa07bffceb989f9e2204de12939e93338ccb922889eaa5b7ef9c29c6a29f4f3'
 
   url "https://releases.gpgtools.org/GPG_Suite-#{version}.dmg"
   gpg "#{url}.sig",
       :key_url => 'https://gpgtools.org/GPGTools%2000D026C4.asc'
+  name 'GPG Suite'
   homepage 'https://gpgtools.org/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :gpl
 
   pkg 'Install.pkg'
   # todo, remove all ENV variables

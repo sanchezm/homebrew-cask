@@ -1,6 +1,6 @@
 cask :v1 => 'virtualbox' do
-  version '4.3.22-98236'
-  sha256 '886d0e6d17ee09cc1f48d7319257d597ed35428237a4d0d2305a7e03347b717d'
+  version '4.3.26-98988'
+  sha256 '3efddddbed7648d5bdfe11a7a341591d05135cda7298792d93334a5faa83d124'
 
   url "http://download.virtualbox.org/virtualbox/#{version.sub(/-.*$/, '')}/VirtualBox-#{version}-OSX.dmg"
   name 'VirtualBox'

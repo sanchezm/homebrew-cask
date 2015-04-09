@@ -1,6 +1,6 @@
 cask :v1 => '0xdbe-eap' do
-  version '139.795.5'
-  sha256 'a94ccacacffa1a911b6476c9016993e0aaf6b0438a61dbf0061c2d330dd078f9'
+  version '141.191'
+  sha256 'bde3e0b3988057ca7cc944e99b07d53b4aedd08ac5fbd77aee4f44c75248e9fe'
 
   url "http://download.jetbrains.com/dbe/0xdbe-#{version}.dmg"
   name '0xDBE EAP'
@@ -10,7 +10,14 @@ cask :v1 => '0xdbe-eap' do
 
   app '0xDBE EAP.app'
 
-  postflight do
-    plist_set(':JVMOptions:JVMVersion', '1.6+')
-  end
+  caveats <<-EOS.undent
+    #{token} requires Java 6 like any other IntelliJ-based IDE.
+    You can install it with
+
+      brew cask install caskroom/homebrew-versions/java6
+
+    The vendor (JetBrains) doesn't support newer versions of Java (yet)
+    due to several critical issues, see details at
+    https://intellij-support.jetbrains.com/entries/27854363
+  EOS
 end
