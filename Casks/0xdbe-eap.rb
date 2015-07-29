@@ -1,12 +1,12 @@
 cask :v1 => '0xdbe-eap' do
-  version '141.191'
-  sha256 'bde3e0b3988057ca7cc944e99b07d53b4aedd08ac5fbd77aee4f44c75248e9fe'
+  version '142.2927.6'
+  sha256 'f7e782b9926c6b0604cb80c86932c8e8ab06178161f15aea5831f136b4707210'
 
-  url "http://download.jetbrains.com/dbe/0xdbe-#{version}.dmg"
+  url "https://download.jetbrains.com/dbe/0xdbe-#{version}.dmg"
   name '0xDBE EAP'
   name '0xDBE'
-  homepage 'http://www.jetbrains.com/dbe/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://www.jetbrains.com/dbe/'
+  license :commercial
 
   app '0xDBE EAP.app'
 

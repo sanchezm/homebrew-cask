@@ -4,8 +4,9 @@ cask :v1 => 'pencil' do
 
   # googlecode.com is the official download host per the vendor homepage
   url "https://evoluspencil.googlecode.com/files/Pencil-#{version}-mac.tar.bz2"
+  name 'Pencil'
   homepage 'http://pencil.evolus.vn'
-  license :oss
+  license :gpl
 
   app 'Pencil.app'
 end

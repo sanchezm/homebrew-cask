@@ -3,7 +3,8 @@ cask :v1 => 'paw' do
   sha256 :no_check
 
   url 'https://luckymarmot.com/paw/download'
-  homepage 'http://luckymarmot.com/paw'
+  name 'Paw'
+  homepage 'https://luckymarmot.com/paw'
   license :commercial
 
   app 'Paw.app'

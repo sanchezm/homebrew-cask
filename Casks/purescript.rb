@@ -1,6 +1,6 @@
 cask :v1 => 'purescript' do
-  version '0.6.9.3'
-  sha256 '9dfa8d93f9000718e8c77d0e5abd1a353a47b12acae8482626f22ece43e1dede'
+  version '0.7.1'
+  sha256 'b83c026b191ba6dc6f0ab3aac8008d6786bbb1fa3e5bee89b885671748b82136'
 
   # github.com is the official download host per the vendor homepage
   url "https://github.com/purescript/purescript/releases/download/v#{version}/macos.tar.gz"
@@ -10,7 +10,8 @@ cask :v1 => 'purescript' do
   license :mit
 
   binary 'purescript/psc'
+  binary 'purescript/psc-bundle'
   binary 'purescript/psc-docs'
-  binary 'purescript/psc-make'
+  binary 'purescript/psc-publish'
   binary 'purescript/psci'
 end

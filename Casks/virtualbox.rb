@@ -1,10 +1,10 @@
 cask :v1 => 'virtualbox' do
-  version '4.3.26-98988'
-  sha256 '3efddddbed7648d5bdfe11a7a341591d05135cda7298792d93334a5faa83d124'
+  version '5.0.0-101573'
+  sha256 '4e27a30af6e4b0f6b1ea69485237d52fc57e6b5608cc234c9480ac0538b31402'
 
-  url "http://download.virtualbox.org/virtualbox/#{version.sub(/-.*$/, '')}/VirtualBox-#{version}-OSX.dmg"
+  url "http://download.virtualbox.org/virtualbox/#{version.sub(%r{-.*},'')}/VirtualBox-#{version}-OSX.dmg"
   name 'VirtualBox'
-  homepage 'http://www.virtualbox.org'
+  homepage 'https://www.virtualbox.org'
   license :gpl
   tags :vendor => 'Oracle'
 

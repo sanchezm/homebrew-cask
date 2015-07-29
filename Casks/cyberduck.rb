@@ -1,12 +1,12 @@
 cask :v1 => 'cyberduck' do
-  version '4.6.5'
-  sha256 '3855066772df5ea211a770318d5135ca4f4ff12197336c06df3c0d4d165bdcd1'
+  version '4.7.1'
+  sha256 'a55d780abf7b90e722a938d08dbc07e581876c9427deac4b369c4bdb91eb854b'
 
   url "https://update.cyberduck.io/Cyberduck-#{version}.zip"
   appcast 'https://version.cyberduck.io/changelog.rss',
-          :sha256 => '8d3c4f2c2b0ec3f83a3230b38b1dfaabb25a05b5a91c4d316a6c4ef0c0fe4de8'
+          :sha256 => 'ca43c0c0464d9ef63cfbbef02aac5b3b0da921710305da1b89f355255a664039'
   name 'Cyberduck'
-  homepage 'http://cyberduck.io/'
+  homepage 'https://cyberduck.io/'
   license :gpl
 
   app 'Cyberduck.app'

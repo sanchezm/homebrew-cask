@@ -176,17 +176,7 @@ Even more special-use stanzas are listed at [Optional Stanzas](doc/CASK_LANGUAGE
 SourceForge projects are a common way to distribute binaries, but they
 provide many different styles of URLs to get to the goods.
 
-We prefer URLs of this format, if the app is Mac-exclusive
-(otherwise a command-line download defaults to the Windows version):
-
-```
-http://sourceforge.net/projects/$PROJECTNAME/files/latest/download
-```
-
-This lets SourceForge pick the best mirror for download.
-
-If the "latest" URL does not point to a valid file for a Mac app, then we
-fall back to this format:
+We prefer URLs of this format:
 
 ```
 http://downloads.sourceforge.net/sourceforge/$PROJECTNAME/$FILENAME.$EXT
@@ -199,6 +189,14 @@ http://$STRING.sourceforge.jp/$PROJECTNAME/$RELEASEID/$FILENAME.$EXT
 ```
 
 `$STRING` is typically of the form `dl` or `$USER.dl`.
+
+If these formats are not available, and the application is Mac-exclusive
+(otherwise a command-line download defaults to the Windows version)
+we prefer the use of this format:
+
+```
+http://sourceforge.net/projects/$PROJECTNAME/files/latest/download
+```
 
 ### Personal Hosting Such as Dropbox
 
@@ -249,11 +247,26 @@ Example:
 	app 'TexmakerMacosxLion/texmaker.app'
 	```
 
-### Indenting
+### Style guide
 
 All Casks and code in the homebrew-cask project should be indented using two
 spaces (never tabs).
 
+If relevant, you may also use string manipulations to improve the maintainability of your Cask. Here's an example from `Lynkeos.app`:
+
+```ruby
+cask :v1 => 'lynkeos' do
+  version '2.10'
+  sha256 'bd27055c51575555a1c8fe546cf057c57c0e45ea5d252510847277734dc550a4'
+
+  url "http://downloads.sourceforge.net/project/lynkeos/lynkeos/#{version}/Lynkeos-App-#{version.gsub('.', '-')}.zip"
+  name 'Lynkeos'
+  homepage 'http://lynkeos.sourceforge.net/'
+  license :gpl
+
+  app "Lynkeos-App-#{version.gsub('.', '-')}/Lynkeos.app"
+end
+```
 
 ## Testing Your New Cask
 

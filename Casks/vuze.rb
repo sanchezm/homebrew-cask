@@ -3,7 +3,8 @@ cask :v1 => 'vuze' do
   sha256 :no_check
 
   url 'http://cf1.vuze.com/files/J7/VuzeBittorrentClientInstaller.dmg'
-  homepage 'http://www.vuze.com/'
+  name 'Vuze'
+  homepage 'https://www.vuze.com/'
   license :gpl
 
   installer :script => 'Vuze Installer.app/Contents/MacOS/JavaApplicationStub',

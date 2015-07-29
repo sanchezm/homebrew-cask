@@ -1,6 +1,6 @@
 cask :v1 => 'epic-games-launcher' do
-  version '2.0.1-2467307'
-  sha256 'e04e5b6232df5bd81d4b796f5c4556a55b56a34e0089c9f65f67c2f3b9c830d1'
+  version '2.3.0-2604750'
+  sha256 'e9e2d4d2753a9d3fee021df6ff421b1340d947e05c542a69ea08146160c82d94'
 
   url "https://download.epicgames.com/Builds/UnrealEngineLauncher/Installers/EpicGamesLauncher-#{version}.dmg"
   name 'Epic Games Launcher'

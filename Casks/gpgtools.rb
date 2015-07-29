@@ -1,11 +1,13 @@
 cask :v1 => 'gpgtools' do
-  version '2015.03-b6'
-  sha256 '1fa07bffceb989f9e2204de12939e93338ccb922889eaa5b7ef9c29c6a29f4f3'
+  version '2015.06'
+  sha256 '298aa816aaeb45f6feefd7d7142caacb330770a9c3ff75a14fd544d7754680ee'
 
   url "https://releases.gpgtools.org/GPG_Suite-#{version}.dmg"
   gpg "#{url}.sig",
       :key_url => 'https://gpgtools.org/GPGTools%2000D026C4.asc'
   name 'GPG Suite'
+  appcast 'https://gpgtools.org/releases/gka/appcast.xml',
+          :sha256 => '23d1d5dea53c4c380bed5f7b6331060539e3acd62cd844bda834388d0a26da81'
   homepage 'https://gpgtools.org/'
   license :gpl
 

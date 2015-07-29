@@ -4,7 +4,8 @@ cask :v1 => 'todoist' do
 
   # cloudfront.net is the official download host per the appcast feed
   url 'https://d2dq6e731uoz0t.cloudfront.net/f34bc666b8a2458496a5c00a115f7cbd/as/Todoist.zip'
-  appcast 'http://todoist.com/static/native_apps/mac_app.xml'
+  appcast 'https://todoist.com/static/native_apps/mac_app.xml'
+  name 'Todoist'
   homepage 'https://todoist.com'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
@@ -13,4 +14,9 @@ cask :v1 => 'todoist' do
   postflight do
     suppress_move_to_applications
   end
+
+  zap :delete => [
+                  '~/Library/Application Support/Todoist',
+                  '~/Library/Preferences/com.todoist.mac.Todoist.plist',
+                 ]
 end

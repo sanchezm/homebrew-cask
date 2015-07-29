@@ -7,7 +7,7 @@ cask :v1 => 'thunder' do
   name '迅雷'
   name 'Thunder'
   homepage 'http://mac.xunlei.com/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Thunder.app'
 end

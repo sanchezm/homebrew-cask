@@ -1,12 +1,12 @@
 cask :v1 => 'pycharm-ce' do
-  version '4.0.6'
-  sha256 '9f70338eb6dc45071f11cb3ac7bc11cd7191df8d9f8f84fd31903d2c8daa6a72'
+  version '4.5.3'
+  sha256 '43b342eb118eb5d760ea9d612a37f8d9f7b27815848319e1ee7c0595e1bfec53'
 
   url "https://download.jetbrains.com/python/pycharm-community-#{version}.dmg"
   name 'PyCharm'
   name 'PyCharm Community Edition'
   name 'PyCharm CE'
-  homepage 'http://www.jetbrains.com/pycharm'
+  homepage 'https://www.jetbrains.com/pycharm'
   license :apache
 
   app 'PyCharm CE.app'

@@ -1,14 +1,15 @@
 cask :v1 => 'praat' do
-  version '5.4.08'
+  version '5.4.12'
 
-  if Hardware::CPU.is_32_bit?
-    sha256 'c0eff18cbd8966a5a178831a7203d1b4c8c058f8342a0570a9eba03f9ff744b6'
+  if Hardware::CPU.is_32_bit? || MacOS.release <= :snow_leopard
+    sha256 '6944362346e198f9bc02cbebf192c87eaf9ea8d28513f06aaec52253135fa1d6'
     url "http://www.fon.hum.uva.nl/praat/praat#{version.gsub('.','')}_mac32.dmg"
   else
-    sha256 '6a6d41b00fb44a95885a54885e267cc8244f93b3647d61fa6048aac27a2b4a5d'
+    sha256 '9a3248579542335813f6529d32a6fd72ee28789ebcec0c57efcef51fc06e50a4'
     url "http://www.fon.hum.uva.nl/praat/praat#{version.gsub('.','')}_mac64.dmg"
   end
 
+  name 'Praat'
   homepage 'http://www.fon.hum.uva.nl/praat/'
   license :gpl
 

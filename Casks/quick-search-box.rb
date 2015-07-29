@@ -4,15 +4,20 @@ cask :v1 => 'quick-search-box' do
 
   url "https://qsb-mac.googlecode.com/files/GoogleQuickSearchBox-#{version}.Release.dmg"
   name 'Quick Search Box'
-  homepage 'http://www.google.com/quicksearchbox/'
+  homepage 'https://code.google.com/p/qsb-mac/'
   license :oss
   tags :vendor => 'Google'
 
   app 'Quick Search Box.app'
+
   postflight do
     system '/bin/chmod', '-R', '--', 'u+w', staged_path
   end
 
   zap :delete => '~/Library/Application Support/Google/Quick Search Box',
       :rmdir  => '~/Library/Application Support/Google/'
+
+  caveats do
+    discontinued
+  end
 end

@@ -1,10 +1,11 @@
 cask :v1 => 'packer' do
-  version '0.7.5'
-  sha256 'c0e149c4515fe548c1daeafabec3b4a091f2aa0c6936723382b3f6fe5a617880'
+  version '0.8.2'
+  sha256 '1163dd8f01781e959cf1a986e00faeca7b3e2128298d8457105d5361d76dccfc'
 
   # bintray.com is the official download host per the vendor homepage
   url "https://dl.bintray.com/mitchellh/packer/packer_#{version}_darwin_amd64.zip"
-  homepage 'http://www.packer.io/'
+  name 'Packer'
+  homepage 'https://www.packer.io/'
   license :oss
 
   binary 'packer'
@@ -13,6 +14,7 @@ cask :v1 => 'packer' do
   binary 'packer-builder-amazon-instance'
   binary 'packer-builder-digitalocean'
   binary 'packer-builder-docker'
+  binary 'packer-builder-file'
   binary 'packer-builder-googlecompute'
   binary 'packer-builder-null'
   binary 'packer-builder-openstack'
@@ -36,8 +38,12 @@ cask :v1 => 'packer' do
   binary 'packer-provisioner-chef-client'
   binary 'packer-provisioner-chef-solo'
   binary 'packer-provisioner-file'
+  binary 'packer-provisioner-powershell'
   binary 'packer-provisioner-puppet-masterless'
   binary 'packer-provisioner-puppet-server'
   binary 'packer-provisioner-salt-masterless'
   binary 'packer-provisioner-shell'
+  binary 'packer-provisioner-shell-local'
+  binary 'packer-provisioner-windows-restart'
+  binary 'packer-provisioner-windows-shell'
 end

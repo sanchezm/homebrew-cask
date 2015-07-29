@@ -1,10 +1,10 @@
 cask :v1 => 'dbvisualizer' do
-  version '9.2.5'
-  sha256 '624d8877f02f4c49526f94f0ab205642a141cf0157224fb2265e6d337f5afe0d'
+  version '9.2.8'
+  sha256 '40422edebbc672355f0e670a96c05903a0778b3daa666787051a3922fc34d4f6'
 
-  url "http://www.dbvis.com/product_download/dbvis-#{version}/media/dbvis_macos_#{version.gsub('.', '_')}_java7.dmg"
+  url "https://www.dbvis.com/product_download/dbvis-#{version}/media/dbvis_macos_#{version.gsub('.', '_')}_java7.dmg"
   name 'DbVisualizer'
-  homepage 'http://www.dbvis.com/'
+  homepage 'https://www.dbvis.com/'
   license :commercial
 
   preflight do
@@ -17,7 +17,7 @@ cask :v1 => 'dbvisualizer' do
   zap :delete => '~/.dbvis'
 
   caveats <<-EOS.undent
-    #{token} requires Java. You can install the latest version with
-      brew cask install java
+    #{token} requires Java 7. You can install the latest version with
+      brew cask install caskroom/versions/java7
   EOS
 end

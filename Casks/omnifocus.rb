@@ -8,10 +8,16 @@ cask :v1 => 'omnifocus' do
     sha256 '3282eb7e41ec2638f68a92a6509eddd96a96c39b65b954dcedcc4e62289f22a9'
     url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.9/OmniFocus-#{version}.dmg"
   else
-    version '2.1.1'
-    sha256 'f5621ed5cc5fe77047fee5e0956d8ebbb3032c49a41cd85a37535d026151c9b1'
+    version '2.2.3'
+    sha256 '68a2d49dcf04b9fb21143b7d305c53a4555d2ad5f9e9769222bf52b5d304720a'
     url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.10/OmniFocus-#{version}.dmg"
   end
+
+  name 'OmniFocus'
+  homepage 'https://www.omnigroup.com/omnifocus/'
+  license :commercial
+
+  app 'OmniFocus.app'
 
   if MacOS.release <= :mountain_lion
     zap :delete => [
@@ -27,10 +33,4 @@ cask :v1 => 'omnifocus' do
                     '~/Library/Caches/Metadata/com.omnigroup.OmniFocus2'
                    ]
   end
-
-  name 'OmniFocus'
-  homepage 'https://www.omnigroup.com/omnifocus/'
-  license :commercial
-
-  app 'OmniFocus.app'
 end

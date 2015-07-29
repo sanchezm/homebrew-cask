@@ -4,8 +4,8 @@ cask :v1 => 'filezilla' do
     version '3.8.1'
     sha256 '86c725246e2190b04193ce8e7e5ea89d5b9318e9f20f5b6f9cdd45b6f5c2d283'
   else
-    version '3.10.3'
-    sha256 '63541098c881dd698aa648506cf922b857d33a12fa31ad39d6faa851f5d5d49b'
+    version '3.12.0.2'
+    sha256 '628feaaf36a93bbd0fe2e21d9d9c201320d99ca43d9a2230325830ff1f95db78'
   end
 
   # sourceforge.net is the official download host per the vendor homepage
@@ -18,7 +18,7 @@ cask :v1 => 'filezilla' do
 
   zap :delete => [
                   '~/Library/Saved Application State/de.filezilla.savedState',
-                  '~/Library/Preference/de.filezilla.plist',
+                  '~/Library/Preferences/de.filezilla.plist',
                  ],
       :rmdir => '~/.config/filezilla'
 end

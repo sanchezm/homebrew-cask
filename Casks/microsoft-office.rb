@@ -3,7 +3,8 @@ cask :v1 => 'microsoft-office' do
   sha256 :no_check
 
   url 'http://officecdn.microsoft.com/pr/MacOffice2011/en-US/MicrosoftOffice2011.dmg'
-  homepage 'http://www.microsoft.com/mac'
+  name 'Microsoft Office'
+  homepage 'https://www.microsoft.com/mac'
   license :commercial
 
   pkg 'Office Installer.pkg'
