@@ -1,6 +1,6 @@
 cask :v1 => 'virtualbox-extension-pack' do
-  version '5.0.0-101573'
-  sha256 'c357e36368883df821ed092d261890a95c75e50422b75848c40ad20984086a7a'
+  version '5.0.4-102546'   # virtualbox.rb and virtualbox-extension-pack.rb should be upgraded together
+  sha256 'e4618e7847eff7c31426f4639bcd83c37bd817147081d3218f21c8e7b6bc7cfa'
 
   url "http://download.virtualbox.org/virtualbox/#{version.sub(%r{-.*},'')}/Oracle_VM_VirtualBox_Extension_Pack-#{version}.vbox-extpack"
   name 'VirtualBox Extension Pack'

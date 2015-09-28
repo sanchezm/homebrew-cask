@@ -7,8 +7,8 @@ cask :v1 => 'bettertouchtool' do
     # bettertouchtool.com is the official download host per the vendor homepage
     url "http://bettertouchtool.net/btt#{version}.zip"
   else
-    version '1.15'
-    sha256 'a41f1a637de542fd36af67524e1ee83d964ed8ede086cab49074761705c316e7'
+    version '1.19'
+    sha256 'a246cf37c0fe5142ebc52fb99c54ab3ed2e261dccbf45b486575139fe1184675'
     url "http://boastr.net/releases/btt#{version}.zip"
   end
 
