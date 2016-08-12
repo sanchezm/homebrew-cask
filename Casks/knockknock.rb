@@ -1,8 +1,8 @@
-cask :v1 => 'knockknock' do
-  version '1.5.0'
-  sha256 'c0b4c3d8d7fb9981998f6b305aff792b3120c27c978c77cb7484f9a7799f793a'
+cask 'knockknock' do
+  version '1.8.0'
+  sha256 'e9639d5782da6bc8796815fe57bbb7a5598b15cc7725db1a84b88b8cb47f44b8'
 
-  # bitbucket.org is the official download host per the vendor homepage
+  # bitbucket.org/objective-see was verified as official when first introduced to the cask
   url "https://bitbucket.org/objective-see/deploy/downloads/KnockKnock_#{version}.zip"
   name 'KnockKnock'
   homepage 'https://objective-see.com/products/knockknock.html'

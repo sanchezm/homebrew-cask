@@ -1,19 +1,18 @@
-cask :v1 => 'sequel-pro' do
-  version '1.1-RC2'
-  sha256 '35224ab0f6f410ce06b18470a5e5918f97c91fa810371ea4686609bba51a22ea'
+cask 'sequel-pro' do
+  version '1.1.2'
+  sha256 '7b34fd63c13e9e9ca4f87d548241ff9df9a266b554af23549efd7be006f387c6'
 
-  # googlecode.com is the official download host per the vendor homepage
-  # url "https://sequel-pro.googlecode.com/files/sequel-pro-#{version}.dmg"
-  url 'https://github.com/sequelpro/sequelpro/releases/download/release-1.1-rc2/sequel-pro-1.1-RC2.dmg'
-  appcast 'http://www.sequelpro.com/appcast/app-releases.xml',
-          :sha256 => 'd6137595bccddd81edfb3a07a82b4ed818b8b1af79750397f929bf74b91d3e32'
+  # github.com/sequelpro/sequelpro was verified as official when first introduced to the cask
+  url "https://github.com/sequelpro/sequelpro/releases/download/release-#{version}/sequel-pro-#{version}.dmg"
+  appcast 'https://github.com/sequelpro/sequelpro/releases.atom',
+          checkpoint: 'dab1d8d845c8ced586958bc4ded12de724c9ec3013313ff3c2a4babc7cdd74fb'
   name 'Sequel Pro'
-  homepage 'http://www.sequelpro.com/'
+  homepage 'https://www.sequelpro.com/'
   license :mit
 
-  depends_on :macos => '>= :leopard'
+  depends_on macos: '>= :leopard'
 
   app 'Sequel Pro.app'
 
-  zap :delete => '~/Library/Application Support/Sequel Pro/Data'
+  zap delete: '~/Library/Application Support/Sequel Pro/Data'
 end

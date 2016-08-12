@@ -1,16 +1,20 @@
-cask :v1 => 'iterm2' do
-  # note: "2" is not a version number, but indicates a different vendor
-  version '2.1.1'
-  sha256 'b8f1bbd11cdb3e26fd9fab6971c28ebeb422361b2cc5fd6e4a843836d5dedeb0'
+cask 'iterm2' do
+  # note: "2" is not a version number, but an intrinsic part of the product name
+  version '3.0.5'
+  sha256 'a0081635383a7a1eda12c99c2800979168bfa757b737b0b15a2639bdb2ce6f95'
 
-  url "https://iterm2.com/downloads/stable/iTerm2-#{version.gsub('.','_')}.zip"
+  url "https://iterm2.com/downloads/stable/iTerm2-#{version.dots_to_underscores}.zip"
+  appcast 'https://iterm2.com/appcasts/final.xml',
+          checkpoint: '080d6081333679f3f93bb8fbd04fe85fcfab9bd84970baf776861f181b688da4'
   name 'iTerm2'
   homepage 'https://www.iterm2.com/'
-  appcast 'https://iterm2.com/appcasts/final.xml',
-          :sha256 => 'c9d0c5800f6851fc55c07d95109f4cb8ef8dfc12a2c1713c1a4dcc5505fba100'
   license :gpl
+
+  auto_updates true
+  depends_on macos: '>= :mountain_lion'
+  depends_on arch: :intel
 
   app 'iTerm.app'
 
-  zap :delete => '~/Library/Preferences/com.googlecode.iterm2.plist'
+  zap delete: '~/Library/Preferences/com.googlecode.iterm2.plist'
 end

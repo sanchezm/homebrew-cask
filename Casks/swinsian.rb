@@ -1,11 +1,10 @@
-cask :v1 => 'swinsian' do
-  version '1.10.15'
-  sha256 '5ec2ca8a2c7bff1d51db86970b989d89ef6084e27c5fe76946d1e9d3227726f9'
+cask 'swinsian' do
+  version '1.12.0'
+  sha256 '733e2579d6a8da3ac096091de7885d60825cd1d5eb973d17b894fa93b53315ce'
 
-  url "http://www.swinsian.com/sparkle/Swinsian_#{version}.zip"
+  url "https://www.swinsian.com/sparkle/Swinsian_#{version}.zip"
   appcast 'https://www.swinsian.com/sparkle/sparklecast.xml',
-          :sha256 => '424eb73016e1a9d473beab4c0d1f0b2ed670a6386130317dcc44574ee096417d',
-          :format => :sparkle
+          checkpoint: '7b33fa250c9bcbf5c0d8d7df4be44624d9afb45b3e7bd31e31d4f38d15f2843d'
   name 'Swinsian'
   homepage 'https://swinsian.com'
   license :commercial

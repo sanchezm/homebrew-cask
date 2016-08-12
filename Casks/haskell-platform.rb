@@ -1,16 +1,16 @@
-cask :v1 => 'haskell-platform' do
-  version '7.10.2-a'
-  sha256 'dd1b64ecec95178044e12a08d9038f1e2156bbd51537da07b18832531b637672'
+cask 'haskell-platform' do
+  version '8.0.1'
+  sha256 'f579f8f120998faba6a9158be7b6c218f73ce65bd041046f0a2677b8cc614129'
 
-  url "https://www.haskell.org/platform/download/#{version.sub(%r{-.*},'')}/Haskell%20Platform%20#{version}%2064bit-signed.pkg"
+  url "https://haskell.org/platform/download/#{version}/Haskell%20Platform%20#{version}%20Full%2064bit-signed-a.pkg"
   name 'Haskell Platform'
   homepage 'https://www.haskell.org/platform/'
   license :bsd
 
-  pkg "Haskell Platform #{version} 64bit-signed.pkg"
+  depends_on macos: '>= :snow_leopard'
 
-  uninstall :script => { :executable => '/usr/bin/uninstall-hs', :args => %w[all --remove] },
-            :pkgutil => 'org.haskell.HaskellPlatform.*'
+  pkg "Haskell Platform #{version} Full 64bit-signed-a.pkg"
 
-  depends_on :macos => '>= :snow_leopard'
+  uninstall script:  { executable: '/Library/Haskell/bin/uninstall-hs', args: %w[all --remove] },
+            pkgutil: 'org.haskell.HaskellPlatform.*'
 end

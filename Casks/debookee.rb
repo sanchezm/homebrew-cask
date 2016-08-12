@@ -1,12 +1,12 @@
-cask :v1 => 'debookee' do
-  version '4.2.2'
-  sha256 '483c2cfa4162fbc23411c33101c99c774d7f5594075270979fded40ce884b8c2'
+cask 'debookee' do
+  version '5.2.0'
+  sha256 'fbf39e372b893dd2c55bc9ddb1141293daa30817e0a3134ea2ae99b753e6a60a'
 
-  url 'http://www.iwaxx.com/debookee/debookee.zip'
-  appcast 'http://www.iwaxx.com/debookee/appcast.php',
-          :sha256 => '42d6b8de182952c1b32fbc12614a3690d125688c97f47618b26cc7aa192b761b'
+  url 'https://www.iwaxx.com/debookee/debookee.zip'
+  appcast 'https://www.iwaxx.com/debookee/appcast.php',
+          checkpoint: '16fedc4bd07eb307d4727b80f499ba8f6841ed7c22c98c2deae07970d02eac97'
   name 'Debookee'
-  homepage 'http://www.iwaxx.com/debookee/'
+  homepage 'https://www.iwaxx.com/debookee/'
   license :commercial
 
   app "Debookee #{version}/Debookee.app"

@@ -1,13 +1,13 @@
-cask :v1 => 'pester' do
-  version '1.1b19'
-  sha256 'ad8a8b9affcab8a1e30753383062d4e5fb117e3601e3138abae59142130227d9'
+cask 'pester' do
+  version '1.1b21'
+  sha256 'a1923d0b330f9e054c1c7215b35322508f03c29294660df9b73bebf6411be283'
 
-  url "http://sabi.net/nriley/software/Pester-#{version}.dmg"
-  appcast 'http://sabi.net/nriley/software/Pester/updates.xml',
-          :sha256 => '05a547dabcb6df809f57695a38c88104b9d2df4ee290c7ba81b725af5bd1426f'
+  url "https://sabi.net/nriley/software/Pester-#{version}.dmg"
+  appcast 'https://sabi.net/nriley/software/Pester/updates.xml',
+          checkpoint: '80c01b621ac7672ce1866445703e2c11532f79b1c6120aa568b33af0bce9289e'
   name 'Pester'
-  homepage 'http://sabi.net/nriley/software/index.html#pester'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://sabi.net/nriley/software/index.html#pester'
+  license :bsd
 
   app 'Pester.app'
 end

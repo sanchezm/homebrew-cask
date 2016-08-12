@@ -1,14 +1,21 @@
-cask :v1 => 'keyboard-maestro' do
-  version '7.0.1'
-  sha256 '5f0f104fc164c53be6ee258db2d5a62e2448493789a80e398593144f9ca0900d'
+cask 'keyboard-maestro' do
+  version '7.2.1'
+  sha256 'f3ab706fcfe97ebf6523baae4a5ebcb1b032f2f757a77ffb633f4dc4ac6d96ea'
 
-  # stairways.com is the official download host per the vendor homepage
-  url "http://files.stairways.com/keyboardmaestro-#{version.delete('.')}.zip"
+  # stairways.com was verified as official when first introduced to the cask
+  url "https://files.stairways.com/keyboardmaestro-#{version.no_dots}.zip"
   name 'Keyboard Maestro'
-  homepage 'http://www.keyboardmaestro.com/'
+  homepage 'https://www.keyboardmaestro.com/'
   license :commercial
 
-  depends_on :macos => '>= :yosemite'
+  depends_on macos: '>= :yosemite'
 
   app 'Keyboard Maestro.app'
+
+  zap delete: [
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.stairways.keyboardmaestro.editor.sfl',
+                '~/Library/Application Support/Keyboard Maestro',
+                '~/Library/Application Support/Keyboard Maestro/Keyboard Maestro Clipboards.plist',
+                '~/Library/Application Support/Keyboard Maestro/Keyboard Maestro Macro Stats.plist',
+              ]
 end

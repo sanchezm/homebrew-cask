@@ -1,18 +1,21 @@
-cask :v1_1 => 'stack' do
-  version '0.1.3.1'
-  sha256 'd13b3927e1385d63c0a43bddb5370ef70daab293ddacd4d0f167493f00392fe8'
+cask 'stack' do
+  version '2.1.3.0'
+  sha256 '21437c146af18b7865d691b26c5a0fb2282e1873b22fa08d0f702ed15d71ce15'
 
-  url "https://github.com/commercialhaskell/stack/releases/download/v#{version}/stack-#{version}-x86_64-osx.gz"
-  appcast 'https://github.com/commercialhaskell/stack/releases.atom'
-  name 'stack'
-  homepage 'https://github.com/commercialhaskell/stack'
-  license :bsd
+  # transip.net/stack was verified as official when first introduced to the cask
+  url "https://mirror.transip.net/stack/software/osx/stack-#{version}.pkg"
+  name 'STACK'
+  homepage 'https://transip.nl/stack'
+  license :gratis
 
-  binary "stack-#{version}", :target => 'stack'
+  pkg "stack-#{version}.pkg"
 
-  postflight do
-    set_permissions "#{staged_path}/stack-#{version}", '+x'
-  end
+  uninstall login_item: 'stack',
+            signal:     ['TERM', 'nl.transip.stack'],
+            pkgutil:    'nl.transip.stack'
 
-  depends_on :arch => :x86_64
+  zap delete: [
+                '~/Library/Caches/nl.transip.stack',
+                '~/Library/Application Support/STACK/',
+              ]
 end

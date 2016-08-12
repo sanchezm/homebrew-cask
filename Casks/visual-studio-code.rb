@@ -1,18 +1,21 @@
-cask :v1 => 'visual-studio-code' do
-  version '0.8.0'
-  sha256 '9105964f4b7b95fd3831165bd78a534896f22020a1d9c607c86d14532dbd2911'
+cask 'visual-studio-code' do
+  version '1.4.0,6276dcb0ae497766056b4c09ea75be1d76a8b679'
+  sha256 'f67ce111e7421a8ff04b43825b9c5ca753a622478e8742051a3d458eb0e5250d'
 
-  # vo.msecnd.net is the official download host per the vendor homepage
-  url "https://az764295.vo.msecnd.net/public/#{version}/VSCode-darwin.zip"
-  name 'Visual Studio Code'
+  # az764295.vo.msecnd.net was verified as official when first introduced to the cask
+  url "https://az764295.vo.msecnd.net/stable/#{version.after_comma}/VSCode-darwin-stable.zip"
+  name 'Microsoft Visual Studio Code'
+  name 'VS Code'
   homepage 'https://code.visualstudio.com/'
-  license :gratis
-  tags :vendor => 'Microsoft'
+  license :mit
+
+  auto_updates true
 
   app 'Visual Studio Code.app'
+  binary "#{appdir}/Visual Studio Code.app/Contents/Resources/app/bin/code"
 
-  zap :delete => [
-                  '~/Library/Application Support/Code',
-                  '~/Library/Caches/Code',
-                 ]
+  zap delete: [
+                '~/Library/Application Support/Code',
+                '~/Library/Caches/Code',
+              ]
 end

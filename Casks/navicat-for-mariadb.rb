@@ -1,12 +1,11 @@
-cask :v1 => 'navicat-for-mariadb' do
-  version '11.1.13'   # navicat-premium.rb and navicat-for-* should be upgraded together
-  sha256 'e2b528113ca6eb180220de72f59ec4323c6f1fabf865995497f179d1f8784eef'
+cask 'navicat-for-mariadb' do
+  version '11.2.13'
+  sha256 'd9cc7134fa2995d666008d92b147a3f0855582096089cdb1e713768553dbdda3'
 
-  url "http://download.navicat.com/download/navicat#{version.sub(%r{^(\d+)\.(\d+).*},'\1\2')}_mariadb_en.dmg"
+  url "http://download.navicat.com/download/navicat#{version.major_minor.no_dots}_mariadb_en.dmg"
   name 'Navicat for MariaDB'
-  homepage 'http://www.navicat.com/products/navicat-for-mariadb'
+  homepage 'https://www.navicat.com/products/navicat-for-mariadb'
   license :commercial
-  tags :vendor => 'Navicat'
 
   app 'Navicat for MariaDB.app'
 end

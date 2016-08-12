@@ -1,13 +1,19 @@
-cask :v1 => 'couchbase-server-community' do
-  version '3.0.1'
-  sha256 '6693176f6799ce43f71b9fa1f09af8ff6857309382e0d115a9a2253474e5a31a'
+cask 'couchbase-server-community' do
+  version '4.0.0'
 
-  url "http://packages.couchbase.com/releases/#{version}/couchbase-server-community_#{version}-macos_x86_64.zip"
+  if MacOS.version <= :yosemite
+    sha256 'ff994c89abf2efcc7dafa6753cfc25c821f3cc24935dccb7a979d170ced56162'
+    url "http://packages.couchbase.com/releases/#{version}/couchbase-server-community_#{version}-macos_x86_64.zip"
+
+    app "couchbase-server-community_#{version}-macos_x86_64/Couchbase Server.app"
+  else
+    sha256 'ce39892b66c06d153004474e273d5775515710e7b073269f75637bf2c4f1f2c4'
+    url "http://packages.couchbase.com/releases/#{version}/couchbase-server-community_#{version}-elcapitan_x86_64.zip"
+
+    app "couchbase-server-community_#{version.major}/Couchbase Server.app"
+  end
+
   name 'Couchbase Server'
-  appcast 'http://appcast.couchbase.com/membasex.xml',
-          :sha256 => 'f05312af8660b51401dd70cd55ddedeb6de551d5b92372ab155906bc597c9ec7'
-  homepage 'http://www.couchbase.com/'
+  homepage 'https://www.couchbase.com/'
   license :apache
-
-  app 'Couchbase Server.app'
 end

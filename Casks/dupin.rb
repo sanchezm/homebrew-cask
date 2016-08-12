@@ -1,20 +1,21 @@
-cask :v1 => 'dupin' do
-  if MacOS.release <= :lion
+cask 'dupin' do
+  if MacOS.version <= :lion
     version '2.7.4'
     sha256 '4aba53f356606614627d57f6a33c1ee9cf13ddf06c13e7ac8487b930cb647b85'
   else
-    version '2.8.10'
-    sha256 '22e0ef142f5fbad52af5d768bb257d46fbde355b64759827eea98bc35d89b864'
+    version '2.10.2'
+    sha256 '060d469593e33e453eeeab46942f0a832042b32175e61377c99f19c2f11cbe57'
+
+    appcast 'https://dougscripts.com/itunes/itinfo/dupin_appcast.xml',
+            checkpoint: '2c663ac368987af0eca9b16cf3a4621227d894e362621b230c7b7bdeae0a59d9'
   end
 
-  url "http://dougscripts.com/itunes/scrx/dupinv#{version.delete('.')}.zip"
-  appcast 'http://dougscripts.com/itunes/itinfo/dupin_appcast.xml',
-          :sha256 => '78e78fefc4b9830de0c8ecfbe8ea6ce0e80cef9564755025d52364fe73b6823b'
+  url "https://dougscripts.com/itunes/scrx/dupinv#{version.no_dots}.zip"
   name 'Dupin'
-  homepage 'http://dougscripts.com/apps/dupinapp.php'
+  homepage 'https://dougscripts.com/apps/dupinapp.php'
   license :commercial
 
-  depends_on :macos => '>= :snow_leopard'
+  depends_on macos: '>= :snow_leopard'
 
   app 'Dupin.app'
 end

@@ -1,14 +1,19 @@
-cask :v1 => 'filebot' do
-  version '4.6'
-  sha256 '018879d539a177dcd00507b21424749343056f5e8dfce763083fae4cfc91ff33'
+cask 'filebot' do
+  version '4.7.2'
+  sha256 '888d98c63bc8f3a008cdb360f132822878c06dfa3f8fdec9fdacf2ba9855ba26'
 
-  # sourceforge.net is the official download host per the vendor homepage
-  url "http://downloads.sourceforge.net/project/filebot/filebot/FileBot_#{version}/FileBot_#{version}-brew.tar.bz2"
+  # sourceforge.net/filebot was verified as official when first introduced to the cask
+  url "https://downloads.sourceforge.net/filebot/filebot/FileBot_#{version}/FileBot_#{version}-brew.tar.bz2"
+  appcast 'https://sourceforge.net/projects/filebot/rss?path=/filebot',
+          checkpoint: 'db948fcf10ec2bf554c46e33caaf26a190f642493d7790f7bb282beb6ec34b56'
   name 'FileBot'
-  homepage 'http://www.filebot.net/'
+  homepage 'https://www.filebot.net/'
   license :gpl
 
-  app 'FileBot.app'
-  binary 'FileBot.app/Contents/MacOS/filebot.sh', :target => 'filebot'
-  caveats 'FileBot requires Java 8. Run "java -version" to verify.'
+  app "FileBot_#{version}-brew.app"
+  binary "#{appdir}/FileBot_#{version}-brew.app/Contents/MacOS/filebot.sh", target: 'filebot'
+
+  caveats do
+    depends_on_java('8')
+  end
 end

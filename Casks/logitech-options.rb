@@ -1,21 +1,24 @@
-cask :v1 => 'logitech-options' do
-  version '5.20.124'
-  sha256 'b60890b63c8ed9a8c525ce7cb8db8c8d33add2d8945a82e15bc0e5f9c5e1187d'
+cask 'logitech-options' do
+  version '6.00.3361'
+  sha256 '632cfd6469e50897a1aa46daccd71404cf0b7f69c39a6740be10e3f745a8fd0c'
 
   url "http://www.logitech.com/pub/techsupport/options/Options_#{version}.zip"
   name 'Logitech Options'
-  homepage 'http://support.logitech.com/en_us/software/options-mac'
+  homepage 'https://support.logitech.com/en_us/software/options'
   license :closed
 
-  pkg 'LogiMgr Installer.app/Contents/Resources/LogiMgr.mpkg'
+  depends_on macos: '>= :mavericks'
 
-  uninstall :script => '/Applications/Utilities/LogiMgr Uninstaller.app/Contents/Resources/Uninstaller',
-            :pkgutil => [
-                        'com.logitech.manager.pkg',
-                        'com.Logitech.signedKext.pkg',
-                        ]
+  pkg "LogiMgr Installer #{version}.app/Contents/Resources/LogiMgr.mpkg"
 
-  depends_on :macos => '>= :mountain_lion'
+  uninstall script:  {
+                       executable: '/Applications/Utilities/Logitech Options Uninstaller.app/Contents/Resources/Uninstaller',
+                       sudo:       false,
+                     },
+            pkgutil: [
+                       'com.logitech.manager.pkg',
+                       'com.Logitech.signedKext.pkg',
+                     ]
 
   caveats do
     reboot

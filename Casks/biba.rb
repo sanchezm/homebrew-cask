@@ -1,11 +1,11 @@
-cask :v1 => 'biba' do
-  version '3.3.3520'
-  sha256 'd2cf68113399ac7ce57b8ccd6474dedebf93574e07408bd6bf5e09218a81df7b'
+cask 'biba' do
+  version '3.14.3972'
+  sha256 '87e1abdc697959a70713e228a2d97f1e76785251f75ac2f63ec6ed45e2d802fb'
 
-  # amazonaws.com is the official download host per the vendor homepage
+  # amazonaws.com/downloads.biba.com was verified as official when first introduced to the cask
   url "https://s3-us-west-1.amazonaws.com/downloads.biba.com/builds/Biba-OSX-#{version}.dmg"
-  appcast 'https://biba.com/osx_downloads/appcast',
-          :sha256 => 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+  appcast 'https://api.biba.com/osx_downloads/appcast',
+          checkpoint: '30eeabb10721a3989ccf226b9dadded4c0eda0d6b32337272dfa71d8f8584032'
   name 'Biba'
   homepage 'https://www.biba.com'
   license :closed

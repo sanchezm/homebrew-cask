@@ -1,14 +1,14 @@
-cask :v1 => 'rstudio' do
-  version '0.99.484'
-  sha256 '5a7a9fc8559a653d38402aadbd7c1a8c726dfdf193ed5394c29fbfa9a4608b2b'
+cask 'rstudio' do
+  version '0.99.903'
+  sha256 'cb7ac2b9ba2e0d4f4096b2dd2859c72742d12faf1461c68a6bfd3bce532ee1d6'
 
-  # rstudio.org is the official download host per the vendor homepage
-  url "http://download1.rstudio.org/RStudio-#{version}.dmg"
+  # rstudio.org was verified as official when first introduced to the cask
+  url "https://download1.rstudio.org/RStudio-#{version}.dmg"
   name 'RStudio'
-  homepage 'http://www.rstudio.com/'
+  homepage 'https://www.rstudio.com/'
   license :affero
 
   app 'RStudio.app'
 
-  zap :delete => '~/.rstudio-desktop'
+  zap delete: '~/.rstudio-desktop'
 end

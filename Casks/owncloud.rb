@@ -1,6 +1,6 @@
-cask :v1 => 'owncloud' do
-  version '2.0.1.2694'
-  sha256 'cffacafe18065f4bfba3a5b0ccecbe73d7facad643a6e8c02ac4add3bce56411'
+cask 'owncloud' do
+  version '2.2.3.3601'
+  sha256 '43c2b75b041b7000fdd12aafdacfcfe51e5b9615600351b934e55ec45f0b8748'
 
   url "https://download.owncloud.com/desktop/stable/ownCloud-#{version}.pkg"
   name 'ownCloud'
@@ -9,8 +9,8 @@ cask :v1 => 'owncloud' do
 
   pkg "ownCloud-#{version}.pkg"
 
-  uninstall :pkgutil => [
-                         'com.ownCloud.client',
-                         'com.owncCloud.finderPlugin',
-                        ]
+  uninstall pkgutil: [
+                       'com.ownCloud.client',
+                       'com.owncCloud.finderPlugin',
+                     ]
 end

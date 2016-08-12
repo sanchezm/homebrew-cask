@@ -1,19 +1,18 @@
-cask :v1 => 'mac2imgur' do
-  version :latest
-  sha256 :no_check
+cask 'mac2imgur' do
+  version '4.0'
+  sha256 '7018bba2cb68f612b535dac583f987e2ecff1e3ce924e019a476cd92d90992d4'
 
-  # mileswd.com is the official download host per the vendor homepage
-  url 'https://mileswd.com/mac2imgur/latest'
-  name 'mac2imgur'
+  url "https://github.com/mileswd/mac2imgur/releases/download/#{version}/mac2imgur.zip"
   appcast 'https://mileswd.com/mac2imgur/update',
-          :sha256 => '1235c533476928d64f6787886a3dc78b421fe8e379cc4e936aeb44152dc09bd1'
+          checkpoint: '8a3f98802208b7b09cae6871983287dbbf5f64e86241ac7b6bffcc7fe9a4de95'
+  name 'mac2imgur'
   homepage 'https://github.com/mileswd/mac2imgur'
   license :gpl
 
   app 'mac2imgur.app'
 
-  zap :delete => [
-                  '~/Library/Caches/com.mileswd.mac2imgur',
-                  '~/Library/Preferences/com.mileswd.mac2imgur.plist'
-                 ]
+  zap delete: [
+                '~/Library/Caches/com.mileswd.mac2imgur',
+                '~/Library/Preferences/com.mileswd.mac2imgur.plist',
+              ]
 end

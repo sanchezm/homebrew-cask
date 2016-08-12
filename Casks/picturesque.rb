@@ -1,12 +1,11 @@
-cask :v1 => 'picturesque' do
-  version :latest
-  sha256 :no_check
+cask 'picturesque' do
+  version '2.4.5-937'
+  sha256 'f1b91abcee428783de1bfe328aae36f1315741ee61ea62d05b35f1bbc8830f8a'
 
-  url 'http://www.acqualia.com/files/download.php?product=picturesque'
-  appcast 'http://www.acqualia.com/picturesque/appcast/appcast3.xml'
+  url "http://www.acqualia.com/files/sparkle/picturesque_#{version}.zip"
   name 'Picturesque'
   homepage 'http://www.acqualia.com/picturesque/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Picturesque.app'
 end

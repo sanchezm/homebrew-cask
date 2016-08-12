@@ -1,26 +1,26 @@
-cask :v1 => 'hopper-disassembler' do
-  version '3.10.9'
-  sha256 'ed4aaad468b0bd8823c5ec6e68798aad69da4eac02c55222eca50441e7b615f3'
+cask 'hopper-disassembler' do
+  version '3.11.17'
+  sha256 '6f8b0e7eab53df27452e64141f779b267633095a75637aa721b9bca0424f6e9c'
 
-  url "http://www.hopperapp.com/HopperWeb/downloads/Hopper-#{version}.zip"
-  appcast 'http://www.hopperapp.com/HopperWeb/appcast_v3.php',
-          :sha256 => '7fef169456987610e7e3c533d8629cfb29cfa38f442cbdd2401c8ac7acd0edd5'
-  name 'Hopper'
+  # d1f8bh81yd16yv.cloudfront.net was verified as official when first introduced to the cask
+  url "https://d1f8bh81yd16yv.cloudfront.net/Hopper-#{version}.zip"
+  appcast "https://www.hopperapp.com/HopperWeb/appcast_v#{version.major}.php",
+          checkpoint: 'aa9ff3c6bdcaa52f5c146c894536ff5f631e248c28bedb592573a5b96f3cd1c5'
   name 'Hopper Disassembler'
-  homepage 'http://www.hopperapp.com/'
+  homepage 'https://www.hopperapp.com/'
   license :commercial
 
-  depends_on :macos => '>= :lion'
+  auto_updates true
+  depends_on macos: '>= :lion'
 
-  app 'Hopper Disassembler v3.app'
+  app "Hopper Disassembler v#{version.major}.app"
+  binary "#{appdir}/Hopper Disassembler v#{version.major}.app/Contents/MacOS/hopper"
 
-  binary 'Hopper Disassembler v3.app/Contents/MacOS/hopper'
-
-  zap :delete => [
-                  '~/Library/Application Support/Hopper',
-                  '~/Library/Application Support/Hopper Disassembler v3',
-                  '~/Library/Caches/com.cryptic-apps.hopper-web-3',
-                  '~/Library/Preferences/com.cryptic-apps.hopper-web-3.plist',
-                  '~/Library/Saved Application State/com.cryptic-apps.hopper-web-3.savedState'
-                 ]
+  zap delete: [
+                '~/Library/Application Support/Hopper',
+                "~/Library/Application Support/Hopper Disassembler v#{version.major}",
+                "~/Library/Caches/com.cryptic-apps.hopper-web-#{version.major}",
+                "~/Library/Preferences/com.cryptic-apps.hopper-web-#{version.major}.plist",
+                "~/Library/Saved Application State/com.cryptic-apps.hopper-web-#{version.major}.savedState",
+              ]
 end

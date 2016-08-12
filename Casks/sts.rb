@@ -1,10 +1,10 @@
-cask :v1 => 'sts' do
-  version '3.7.0.RELEASE'
-  sha256 'bb7bc748541e552e39095fa10990923c3c17df28b140ef9559a6bbf1f4ed262a'
+cask 'sts' do
+  version '3.8.1.RELEASE'
+  sha256 'e54ca0ea1c1348789629b32b0b2ab9bb9c181606449fdc5b023a36919d6df8e7'
 
   module Utils
     def self.eclipse_version
-      '4.5'   # find eclipse version at http://spring.io/tools/sts/all
+      '4.6' # find eclipse version at https://spring.io/tools/sts/all
     end
 
     def self.eclipse_version_major_minor
@@ -12,6 +12,7 @@ cask :v1 => 'sts' do
     end
   end
 
+  # springsource.com was verified as official when first introduced to the cask
   url "http://dist.springsource.com/release/STS/#{version}/dist/e#{Utils.eclipse_version_major_minor}/spring-tool-suite-#{version}-e#{Utils.eclipse_version}-macosx-cocoa-x86_64.tar.gz"
   name 'Spring Tool Suite'
   homepage 'https://spring.io/tools/sts'

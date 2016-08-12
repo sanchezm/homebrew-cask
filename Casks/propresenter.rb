@@ -1,10 +1,10 @@
-cask :v1 => 'propresenter' do
-  version '6.0.8_b15006'
-  sha256 'd73286ba462820dc7c4885c2b67c7bef03751939f4440a51a205e0e97494263f'
+cask 'propresenter' do
+  version '6.1.0_b15136'
+  sha256 '5abf4f316ae1c07bd0f5014393e75a45ccdcbe89e041d0772389c3b6a05bdf50'
 
   url "https://www.renewedvision.com/downloads/ProPresenter6_#{version}.dmg"
   appcast 'https://www.renewedvision.com/update/ProPresenter6.php',
-          :sha256 => 'e5dddb99a9cf20e2ca9713fac7cf8651c725eee16f7071afc36539278fe7637c'
+          checkpoint: 'cd9d81e4df1d47550658d6f1afccb4f798c53b1b53e21fa054e9c11be29bbcf9'
   name 'ProPresenter'
   homepage 'https://www.renewedvision.com/propresenter.php'
   license :commercial

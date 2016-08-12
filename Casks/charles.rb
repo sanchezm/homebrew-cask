@@ -1,16 +1,16 @@
-cask :v1 => 'charles' do
-  version '3.10.2'
-  sha256 'd68be46d7dc9654b4b3b094a2f451226376d7bf3c5d401aecba082b27e0b8b6a'
+cask 'charles' do
+  version '4.0'
+  sha256 'ea337229361979e663109b7da8f71fbe3d0641606a852eb66a2eb98fd1af7d50'
 
-  url "http://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}.dmg"
+  url "https://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}.dmg"
   name 'Charles'
-  homepage 'http://www.charlesproxy.com/'
+  homepage 'https://www.charlesproxy.com/'
   license :commercial
 
   app 'Charles.app'
 
-  zap :delete => [
-                  '~/Library/Application Support/Charles',
-                  '~/Library/Preferences/com.xk72.charles.config',
-                 ]
+  zap delete: [
+                '~/Library/Application Support/Charles',
+                '~/Library/Preferences/com.xk72.charles.config',
+              ]
 end
